@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- iid: 643 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+<link href="https://static-assets-us.libcal.com/css196/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://static-assets-us.libcal.com/css196/jquery-ui.min.css" rel="stylesheet">
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://static-assets-us.libcal.com/css196/LibCal_public.min.css" rel="stylesheet">
+    <link href="https://static-assets-us.libcal.com/css196/print.min.css" rel="stylesheet" media="print">
+    
+<script src="https://static-assets-us.libcal.com/js196/jquery.min.js"></script>
+
+    <script src="https://static-assets-us.libcal.com/js196/jquery-ui.min.js"></script>
+
+<script src="https://static-assets-us.libcal.com/js196/bootstrap.min.js"></script>
+    <script src="https://static-assets-us.libcal.com/js196/LibCal_public.min.js"></script>
+        <script>
+    springSpace.dateFormat = "M/D/YYYY";
+    springSpace.dateShortFormat = "M/D/YYYY";
+    springSpace.timeFormat = "h:mma";
+    springSpace.timezone = 'America/New_York';
+    springSpace.currency = "USD";
+    springSpace.currencySymbol = "$";
+
+    springSpace.language = 'en'; // en
+    springSpace.locale = 'en-US'; // en-US
+
+    springSpace.phpTimeFormat = 'g:ia';
+
+    springSpace.bootstrapAsset = 'https://static-assets-us.libcal.com/css196/bootstrap.min.css';
+    springSpace.publicCssAsset = 'https://static-assets-us.libcal.com/css196/LibCal_public.min.css';
+    springSpace.adminCssAsset = 'https://static-assets-us.libcal.com/css196/LibCal_admin.min.css';
+</script>
+    <script>
+         var springLang  = { eq_GoToNextAvailable: "Next Available", eq_js_add_cart_btn: "Add to Cart", eq_js_add_cc_btn: "Add to Cart & Checkout", eq_js_add_eq_btn: "Add Equipment", eq_js_add_start: "All additional items must have a starting time of", eq_js_add_to_cart: "Add Item to Cart", eq_js_booking_summary_title: "Thank you!", eq_js_cart_tt: "Create a shopping cart with these space bookings, and go to equipment booking page to add more items to the cart.", eq_js_close: "Close", eq_js_date: "Change Return Date", eq_js_det_return: "Determining return time", eq_js_from: "From:", eq_js_from_det: "from", eq_js_go_to_date: "Go To Date", eq_js_isRequired: "is required!", eq_js_rem_pending: "Remove Pending Booking", eq_js_spacew_forb_multi: "Forbidden from booking same resource multiple times in a single booking.<br><br>Please only select sequential checkboxes.", eq_js_spacew_forb_single: "Forbidden from booking different resources in a single booking.", eq_js_to: "To:", eq_js_until_det: "until...", eq_start_over: "Make Another Booking", eq_unavail: "Unavailable/Padding", eq_your_book: "Your Booking" };
+    </script>
+    <meta name="robots" content="noindex, nofollow, noarchive">    <title>
+                    Space Availability - Berry 171A -
+                Library Events &amp; Room Bookings -
+        Dartmouth Library
+    </title>
+        <link rel="stylesheet" href="https://static-assets-us.libcal.com/css196/fullcalendar.min.css"/>
+
+    <style>
+    .s-lc-eq-avail, .label-eq-avail, .s-lc-eq-period-available {
+        background: #14951F linear-gradient(135deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent) !important;
+border-color: #14951F !important;
+    }
+
+    .s-lc-eq-avail:hover, .s-lc-eq-period-available:hover {
+        background: #095212 linear-gradient(135deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent) !important;
+border-color: #095212 !important;
+    }
+
+    .s-lc-eq-pending, .label-eq-pending, .s-lc-eq-period-pending {
+        background: #F59F16 linear-gradient(90deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent) !important;
+border-color: #F59F16 !important;
+    }
+
+    .s-lc-eq-checkout, .s-lc-eq-r-unavailable, .s-lc-eq-r-padding, .label-eq-unavailable, .s-lc-eq-period-booked {
+        background: #854077 linear-gradient(45deg, rgba(255,255,255,.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.2) 50%, rgba(255,255,255,.2) 75%, transparent 75%, transparent) !important;
+border-color: #854077 !important;
+    }
+</style>
+
+    <style>
+        @media (max-width: 768px) {
+            .fc-timeline .fc-cell-text {
+                font-size: 12px !important;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://www.library.dartmouth.edu/themes/custom/bootstrap_dcl/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<!-- check for session store and set html class if fonts are already loaded -->
+<script type="text/javascript">
+var html = document.documentElement;
+  
+var fontNames = ['font-label','font-label-serif','headings-font-family-h2','headings-font-family-others','headings-font-family-h1','font-family-serif','icon-font-name','font-primary-icons','national-title'];
+
+if (typeof(Storage) !== "undefined") {
+	var domain = window.location.hostname.replace(/\./g,'_');
+  fontNames.forEach ( function(index) {
+  		var storageKey = index+"-"+domain;
+      if(localStorage.storageKey) {
+        html.classList.add(index + '-loaded');
+      }
+    }
+  );
+}
+</script>
+
+<style media="all">
+@import url("//www.dartmouth.edu/library/_permacode/common/library/scripts/fancybox-3.1.20/jquery.fancybox.min.css");
+@import url("//www.dartmouth.edu/library/_permacode/common/library/styles/parts/libcal_space.min.css");
+@import url("https://www.dartmouth.edu/library/_permacode/common/library/scripts/bootstrap-accessibility/bootstrap-accessibility.min.css");
+</style>
+<script type="text/javascript" src="//www.dartmouth.edu/library/_permacode/common/library/scripts/libcal-space.js"></script>
+<style media="print">
+@import url("//www.dartmouth.edu/library/_permacode/common/library/styles/parts/ou_library_apps_print.min.css");
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap" media="all" />
+<style>
+.s-lc-profile-image img {
+ background:none;
+ border:0px solid #A9A9A9;
+ box-shadow:none !important;
+ padding:4px;
+ max-width:55% !important;
+}
+.s-lc-eq-co-terms {display: none !important;}
+.s-lc-public-footer { color: #000 !important}
+</style>
+</head>
+<body id="equip_" class="s-lc-public s-lc-public-page-5">
+
+        <div class="sr-only">
+        <a href="/r/accessible?lid=2988&gid=5070">
+            Alternate page for screen reader Users        </a>
+    </div>
+
+<a id="s-lc-public-skiplink" class="s-lc-skiplink alert-info" href="#s-lc-public-main">Skip to Main Content</a>
+
+<div id="s-lc-public-cust-header" role="banner"><div class="dcl-fixed-header navbar">
+	<div class="dcl-affix" role="banner">
+		<nav class="navbar navdar-default navbar-top-menu">
+			<div class="primary-secondary-menus">
+				<div class="primary-secondary-menus-inner-wrapper">
+					<nav id="primary-secondary-menus-wrapper" class="">
+						<div class="region region-primary-menu">
+							<section id="block-bootstrap-dcl-branding" class="block block-system block-system-branding-block clearfix">
+								<a class="logo" href="https://www.library.dartmouth.edu/" title="Dartmouth College Library" rel="home"> <img src="https://www.dartmouth.edu/library/_permacode/common/library/images/dartmouth-library-logo-square.png" alt="Dartmouth College Library" /> </a> 
+							</section>
+							<section id="block-primoglobalsearchblock" class="search--dcl-unified-search-form block block-block-content block-block-contentdd497771-fb87-438c-aa5e-260d73aaa118 clearfix">
+								<div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+									<form action="https://search.library.dartmouth.edu/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" class="homesearch-global-search-form" method="get">
+							<!-- Customizable Parameters -->
+										<input name="vid" type="hidden" value="01DCL_INST:01DCL" />
+										<input name="tab" type="hidden" value="All" />
+										<input name="search_scope" type="hidden" value="MyInst_and_CI" />
+										<input name="mode" type="hidden" value="basic" />
+							<!-- Fixed parameters -->
+										<input name="displayMode" type="hidden" value="full" />
+										<input name="bulkSize" type="hidden" value="10" />
+										<input name="highlight" type="hidden" value="true" />
+										<input name="dum" type="hidden" value="true" />
+										<input class="primo-query" name="query" type="hidden" />
+										<input name="displayField" type="hidden" value="all" />
+							<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+										<input name="pcAvailabiltyMode" type="hidden" value="true" />
+										<div class="input-group form-group js-form-wrapper form-wrapper">
+											<div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-q js-form-item-q form-no-label form-group">
+												<input aria-label="Search terms" class="home-page-search__query form-control form-text" maxlength="" name="q" placeholder="Search books, articles, &amp; more" size="50" type="text" value="" />
+											</div>
+											<div class="input-group-btn form-group js-form-wrapper form-wrapper">
+												<button class="search-submit button js-form-submit form-submit btn-primary btn icon-before" name="op" type="submit" value="Search"><span class="offscreen">Search</span></button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</section>
+							<nav role="navigation" aria-labelledby="block-globaldropdownmenu-6-menu" id="block-globaldropdownmenu-6" class="table-menu column-menu">
+								<h2 class="visually-hidden" id="block-globaldropdownmenu-6-menu">
+									Global dropdown menu 
+								</h2>
+								<ul class="menu menu--dropdown nav">
+									<li class="expanded dropdown"> <a href="https://www.library.dartmouth.edu/research-collections/research-support" class="dropdown-toggle">Research Support</a><span class="fa icon-tab-toggle fa-angle-double-down" tabindex="0" aria-label="Open menu"></span>
+									<ul class="menu menu--dropdown nav dropdown-menu" aria-label="navigation submenu">
+										<li class="submenu-group">
+										<ul>
+											<li> <a href="https://researchguides.dartmouth.edu/subjectlibrarians" tabindex="-1" class="dart-nav-banner-link">Subject Librarians</a> <span class="item-description">Reach out to a librarian for specialized help in a discipline.</span> </li>
+											<li> <a href="https://search.library.dartmouth.edu/discovery/search?vid=01DCL_INST:01DCL&lang=en" tabindex="-1" class="dart-nav-banner-link">Library Catalog</a> <span class="item-description">Find books, audio and video, music scores, maps and more. </span> </li>
+											<li> <a href="https://researchguides.dartmouth.edu/?b=s" tabindex="-1" class="dart-nav-banner-link">Research Guides</a> <span class="item-description">Use the best resources we have, picked by librarians.</span> </li>
+										</ul>
+										<ul>
+											<li> <a href="https://researchguides.dartmouth.edu/az.php" tabindex="-1" class="dart-nav-banner-link">Databases</a> <span class="item-description">There&#039;s a wealth of information to be found through our database subscriptions.</span> </li>
+											<li> <a href="https://www.library.dartmouth.edu/research-collections/collections" tabindex="-1" class="dart-nav-banner-link">Collections</a> <span class="item-description">Print and digital collections serve as extensions of our teaching and research facilities.</span> </li>
+										    <li> <a href="https://www.library.dartmouth.edu/research-collections/research-support#services" tabindex="-1">Research Services</a><span class="item-description">We're available throughout all stages of your research.</span></li>
+										</ul>
+										</li>
+										<li class="additional-links">
+										<ul>
+											<li class="expanded"> <span class="additional-links-header">Quick Links</span> 
+											<ul class="menu menu--dropdown nav dropdown-menu">
+												<li> <a href="https://researchguides.dartmouth.edu/librarysearch" tabindex="-1" class="dart-nav-banner-link">Library Search</a> </li>
+												<li> <a href="https://www-jstor-org.dartmouth.idm.oclc.org/" tabindex="-1" class="dart-nav-banner-link">JSTOR</a> </li>
+												<li> <a href="https://pubmed.ncbi.nlm.nih.gov/?dr=abstract&holding=dmhclib_fft&otool=dmhclib" tabindex="-1" class="dart-nav-banner-link">PubMed</a> </li>
+												<li> <a href="https://libcal.dartmouth.edu/appointments/" tabindex="-1" class="dart-nav-banner-link">Make an Appointment</a> </li>
+												<li> <a href="https://researchguides.dartmouth.edu/newspapers_and_news" tabindex="-1" class="dart-nav-banner-link">Newspapers</a> </li>
+												<li> <a href="https://browzine.com/libraries/252/subjects?sort=rank" tabindex="-1" class="dart-nav-banner-link">Journals</a> </li>
+												<li> <a href="https://www.dartmouth.edu/library/collprog/" tabindex="-1" class="dart-nav-banner-link">Collections Program</a> </li>
+											</ul>
+											</li>
+										</ul>
+										</li>
+									</ul>
+									</li>
+									<li class="expanded dropdown active"> <a href="https://www.library.dartmouth.edu/borrow-renew" class="dropdown-toggle">Borrow &amp; Renew</a> <span class="fa icon-tab-toggle fa-angle-double-down" tabindex="0" aria-label="Open menu"></span>
+									<ul class="menu menu--dropdown nav dropdown-menu" aria-label="navigation submenu">
+										<li class="submenu-group">
+										<ul>
+											<li> <a href="https://search.library.dartmouth.edu/discovery/search?vid=01DCL_INST:01DCL&lang=en" tabindex="-1" class="dart-nav-banner-link">Library Catalog</a> <span class="item-description">Find books, audio and video, music scores, maps and more in the catalog.</span> </li>
+											<li> <a href="https://www.library.dartmouth.edu/borrow-renew/borrowing-requesting" tabindex="-1" class="dart-nav-banner-link">Borrowing &amp; Requesting</a> <span class="item-description">Learn how to borrow materials at Dartmouth and from other libraries via BorrowDirect or DartDoc. </span> </li>
+											<li class="active"> <a href="https://www.library.dartmouth.edu/borrow-renew/equipment" tabindex="-1" class="dart-nav-banner-link">Tech Loans</a> <span class="item-description">We&#039;ve got everything from chargers to a professional portable recording studio.</span> </li>
+										</ul>
+										<ul>
+											<li> <a href="https://www.library.dartmouth.edu/borrow-renew/alumni" tabindex="-1" class="dart-nav-banner-link">Alumni Access and Resources</a> <span class="item-description">How to access resources, on and off-campus.</span> </li>
+											<li> <a href="https://researchguides.dartmouth.edu/mediacollections" tabindex="-1" class="dart-nav-banner-link">Media</a> <span class="item-description">Discover an extensive range of movies, television series, documentaries, educational programs, audio and more.</span> </li>
+											<li> <a href="https://www.library.dartmouth.edu/help/off-campus" tabindex="-1" class="dart-nav-banner-link">Off-Campus Access</a> <span class="item-description">Students, staff, and faculty can access most of our electronic resources off-campus. </span> </li>
+										</ul>
+										</li>
+										<li class="additional-links">
+										<ul>
+											<li class="expanded"> <span class="additional-links-header">Quick Links</span> 
+											<ul class="menu menu--dropdown nav dropdown-menu">
+												<li> <a href="https://www.library.dartmouth.edu/borrow-renew/borrowing-requesting#borrowdirect" tabindex="-1" class="dart-nav-banner-link">BorrowDirect</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/borrow-renew/borrowing-requesting#dartdoc" tabindex="-1" class="dart-nav-banner-link">DartDoc</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/borrow-renew/course-reserves-faculty" tabindex="-1" class="dart-nav-banner-link">Course Reserves for Faculty</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/borrow-renew/course-reserves-students" tabindex="-1" class="dart-nav-banner-link">Course Reserves for Students</a> </li>
+											</ul>
+											</li>
+										</ul>
+										</li>
+									</ul>
+									</li>
+									<li class="expanded dropdown"> <a href="https://www.library.dartmouth.edu/libraries-and-spaces" class="dropdown-toggle">Libraries &amp; Spaces</a> <span class="fa icon-tab-toggle fa-angle-double-down" tabindex="0" aria-label="Open menu"></span>
+									<ul class="menu menu--dropdown nav dropdown-menu" aria-label="navigation submenu">
+										<li class="submenu-group">
+										<ul>
+											<li class="expanded"> <a href="https://www.library.dartmouth.edu/spaces" tabindex="-1" class="dart-nav-banner-link">Study and Meeting Spaces</a> <span class="item-description">Book a meeting room for a group or sign up to use a private study room.</span> </li>
+											<li> <a href="https://www.library.dartmouth.edu/libraries-hours/berry" tabindex="-1" class="dart-nav-banner-link">Hours and Locations</a> <span class="item-description">Our hours, holiday closings, street addresses and contact information.</span> </li>
+											<li> <a href="https://www.dartmouth.edu/library/bakerberry/" tabindex="-1" class="dart-nav-banner-link">Baker-Berry Library</a> <span class="item-description">Our main library houses the humanities and social sciences collections.</span> </li>
+										</ul>
+										<ul>
+											<li> <a href="https://www.dartmouth.edu/library/biomed/" tabindex="-1" class="dart-nav-banner-link">Biomedical Libraries</a> <span class="item-description">The Dana and Matthews-Fuller libraries support the disciplines of health and life sciences.</span> </li>
+											<li> <a href="https://www.dartmouth.edu/library/maproom/" tabindex="-1" class="dart-nav-banner-link">Evans Map Room</a> <span class="item-description">Houses thousands of sheet maps, mapping software, atlases, globes &amp; more.</span> </li>
+											<li> <a href="https://www.library.dartmouth.edu/feldberg" tabindex="-1" class="dart-nav-banner-link">Feldberg Business &amp; Engineering Library</a> <span class="item-description">Offers support for the Tuck School of Business &amp; Thayer School of Engineering.</span> </li>
+										</ul>
+										<ul>
+											<li> <a href="https://www.dartmouth.edu/library/mediactr/" tabindex="-1" class="dart-nav-banner-link">Jones Media Center</a> <span class="item-description">Provides facilities &amp; collections for researching, viewing &amp; producing media.</span> </li>
+											<li> <a href="https://www.dartmouth.edu/library/rauner/" tabindex="-1" class="dart-nav-banner-link">Rauner Special Collections Library</a> <span class="item-description">Includes rare books, manuscripts &amp; more.</span> </li>
+											<li> <a href="https://www.dartmouth.edu/library/sherman/" tabindex="-1" class="dart-nav-banner-link">Sherman Art Library</a> <span class="item-description">Supports the departments of Art History, Studio Art, as well as the Hood Museum of Art.</span> </li>
+										</ul>
+										</li>
+										<li class="additional-links">
+										<ul>
+											<li class="expanded"> <span class="additional-links-header">About Us</span> 
+											<ul class="menu menu--dropdown nav dropdown-menu">
+												<li> <a href="https://www.library.dartmouth.edu/libraries-and-spaces/accessibility" tabindex="-1" class="dart-nav-banner-link">Accessibility</a> </li>
+												<li> <a href="https://libcal.dartmouth.edu/calendar/library/?cid=214" tabindex="-1" class="dart-nav-banner-link">Events</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/about/privacy-policy" tabindex="-1" class="dart-nav-banner-link">Privacy Policy</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/equity-inclusion" tabindex="-1" class="dart-nav-banner-link">Dean's  Council for Equity and Inclusion</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/about/strategic-objectives-priorities" tabindex="-1" class="dart-nav-banner-link">Strategic Objectives</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/about/visit-history" tabindex="-1" class="dart-nav-banner-link">Visiting &amp; Exhibits</a> </li>
+											</ul>
+											</li>
+										</ul>
+										</li>
+									</ul>
+									</li>
+									<li class="expanded dropdown"> <a href="https://www.library.dartmouth.edu/help" class="dropdown-toggle">Help</a> <span class="fa icon-tab-toggle fa-angle-double-down" tabindex="0" aria-label="Open menu"></span>
+									<ul class="menu menu--dropdown nav dropdown-menu" aria-label="navigation submenu">
+										<li class="submenu-group">
+										<ul>
+											<li> <a href="https://researchguides.dartmouth.edu/librarysearch" tabindex="-1" class="dart-nav-banner-link">Library Search</a> <span class="item-description">Learn about signing into your account, search options and tips, getting to resources and working with citations.</span> </li>
+											<li> <a href="https://www.library.dartmouth.edu/research-collections/research-support" tabindex="-1" class="dart-nav-banner-link">Research Support</a> <span class="item-description">We&#039;re committed to partnering with you to enhance and showcase your research.</span> </li>
+											<li> <a href="https://www.dartmouth.edu/library/schcomm/" tabindex="-1" class="dart-nav-banner-link">Publishing Support</a> <span class="item-description">We provide consultation focusing on opportunities in digital publishing and scholarship.</span> </li>
+										</ul>
+										<ul>
+											<li> <a href="https://researchguides.dartmouth.edu/subjectlibrarians" tabindex="-1" class="dart-nav-banner-link">Subject Librarians</a> <span class="item-description">We have a subject librarian for your major or course who wants to help!</span> </li>
+											<li> <a href="https://www.library.dartmouth.edu/help/teaching-support" tabindex="-1" class="dart-nav-banner-link">Teaching Support</a> <span class="item-description">Working together with faculty, we can help design and implement effective research experiences for students.</span> </li>
+											<li> <a href="https://libcal.dartmouth.edu/calendar/library/?cal=214&amp;cid=214&amp;d=0000-00-00&amp;t=d" tabindex="-1" class="dart-nav-banner-link">Workshops &amp; Events</a> <span class="item-description">We offer a variety of events to assist you in developing skills ranging from research to programming.</span> </li>
+										</ul>
+										</li>
+										<li class="additional-links">
+										<ul>
+											<li class="expanded"> <span class="additional-links-header">Quick Links</span> 
+											<ul class="menu menu--dropdown nav dropdown-menu">
+												<li> <a href="https://www.library.dartmouth.edu/help/contact-us" tabindex="-1" class="dart-nav-banner-link">Contact Us</a> </li>
+												<li> <a href="https://libanswers.dartmouth.edu/" tabindex="-1" class="dart-nav-banner-link">FAQs</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/help/off-campus" tabindex="-1" class="dart-nav-banner-link">Off-Campus Access</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/feedback" tabindex="-1" class="dart-nav-banner-link">Send Us Feedback</a> </li>
+												<li> <a href="https://www.library.dartmouth.edu/directory" tabindex="-1" class="dart-nav-banner-link">Staff Directory</a> </li>
+											</ul>
+											</li>
+										</ul>
+										</li>
+									</ul>
+									</li>
+									<li class="expanded dropdown account"> <span class="dropdown-toggle">Login<span class="account"></span></span><span class="fa icon-tab-toggle fa-angle-double-down" tabindex="0" aria-label="Open menu"></span>
+									<ul class="menu menu--dropdown nav dropdown-menu" aria-label="navigation submenu">
+										<li> <a href="https://search.library.dartmouth.edu/discovery/login?vid=01DCL_INST:01DCL" tabindex="-1" class="dart-nav-banner-link">Students, Faculty &amp; Staff</a> </li>
+										<li> <a href="https://search.library.dartmouth.edu/discovery/login?vid=01DCL_INST:01DCL" tabindex="-1" class="dart-nav-banner-link">DHMC &amp; Guests</a> </li>
+										<li> <a href="https://www.library.dartmouth.edu/borrow-renew/alumni" tabindex="-1" class="dart-nav-banner-link">Alumni</a> </li>
+										<li> <a href="https://www.library.dartmouth.edu/borrow-renew/borrowing-requesting#borrowdirect" tabindex="-1" class="dart-nav-banner-link">BorrowDirect</a> </li>
+										<li> <a href="https://www.library.dartmouth.edu/borrow-renew/borrowing-requesting#dartdoc" tabindex="-1" class="dart-nav-banner-link">DartDoc</a> </li>
+									</ul>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</nav>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#global-mobile-menu"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="glyphicon glyphicon-remove-sign"></span> </button> 
+					</div>
+				</div>
+				<nav id="global-mobile-menu" class="collapse">
+					<div id="mobile-menu-inner" class="">
+						<div class="region region-mobile-menu">
+							<section class="search--dcl-unified-search-form block block-dcl-unified-search block-dcl-unified-search-searchblock clearfix" data-drupal-selector="dcl-unified-search-form-2" id="block-primoglobalsearchblock-2">
+								<form action="https://search.library.dartmouth.edu/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" class="homesearch-global-search-form" method="get">
+								<!-- Customizable Parameters -->
+											<input name="vid" type="hidden" value="01DCL_INST:01DCL" />
+											<input name="tab" type="hidden" value="All" />
+											<input name="search_scope" type="hidden" value="MyInst_and_CI" />
+											<input name="mode" type="hidden" value="basic" />
+								<!-- Fixed parameters -->
+											<input name="displayMode" type="hidden" value="full" />
+											<input name="bulkSize" type="hidden" value="10" />
+											<input name="highlight" type="hidden" value="true" />
+											<input name="dum" type="hidden" value="true" />
+											<input class="primo-query" name="query" type="hidden" />
+											<input name="displayField" type="hidden" value="all" />
+								<!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+											<input name="pcAvailabiltyMode" type="hidden" value="true" />
+											<div class="input-group form-group js-form-wrapper form-wrapper">
+												<div class="form-item js-form-item form-type-textfield js-form-type-textfield form-item-q js-form-item-q form-no-label form-group">
+													<input aria-label="Search terms" class="home-page-search__query form-control form-text" maxlength="" name="q" placeholder="Search books, articles, &amp; more" size="50" type="text" value="" />
+												</div>
+											<div class="input-group-btn form-group js-form-wrapper form-wrapper">
+												<button class="search-submit button js-form-submit form-submit btn-primary btn icon-before" name="op" type="submit" value="Search"><span class="offscreen">Search</span></button>
+											</div>
+										</div>
+									</form>
+							</section>
+							<nav role="navigation" aria-labelledby="block-globaldropdownmenu-5-menu" id="block-globaldropdownmenu-5">
+								<h2 class="visually-hidden" id="block-globaldropdownmenu-5-menu">
+									Global dropdown menu 
+								</h2>
+								<ul class="menu menu--global-dropdown-menu nav">
+									<li>
+									  <a href="https://www.library.dartmouth.edu/research-collections/research-support" class="dropdown-toggle">Research Support</a>           
+									</li>
+									<li>
+									  <a href="https://www.library.dartmouth.edu/borrow-renew" class="dropdown-toggle">Borrow &amp; Renew </a>           
+									</li>
+									<li>
+									  <a href="https://www.library.dartmouth.edu/libraries-and-spaces" class="dropdown-toggle">Libraries &amp; Spaces</a>           
+									</li>
+									<li>
+									  <a href="https://www.library.dartmouth.edu/help" class="dropdown-toggle">Help</a>           
+									</li>
+									<li class="expanded dropdown account">
+										<span class="dropdown-toggle">Login</span> <span class="mobile-open-show fa fa-angle-double-down" tabindex="0" aria-label="Open menu"></span>           
+										<ul class="menu menu--global-dropdown-menu nav dropdown-menu">
+									 
+											<li>
+												<a href="https://search.library.dartmouth.edu/discovery/login?vid=01DCL_INST%3A01DCL">Students, Faculty &amp; Staff</a>
+											</li>
+											<li>
+												<a href="https://search.library.dartmouth.edu/discovery/login?vid=01DCL_INST%3A01DCL">DHMC &amp; Guests</a>
+											</li>
+											<li>
+												<a href="https://www.library.dartmouth.edu/borrow-renew/alumni">Alumni</a>
+											</li>
+											<li>
+												<a href="https://www.library.dartmouth.edu/borrow-renew/borrowing-requesting#borrowdirect">BorrowDirect</a>
+											</li>
+											<li>
+												<a href="https://www.library.dartmouth.edu/borrow-renew/borrowing-requesting#dartdoc">DartDoc</a>
+											</li>
+										</ul>
+			  
+									</li>
+								</ul>
+  
+							</nav>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</nav>
+	</div>
+</div>
+<!-- Emergency library header -->
+<div class="region region-emergency-banner">
+	<section id="block-dartmouthcollegeemergencybannerblock" class="contextual-region block block-dcl-dart-emergency-banner block-dcl-dart-emergency-banner-block clearfix">
+    <div id="dartmouth-emergency-banner-placeholder"></div>
+  </section>
+	<section id="block-emergencybannerblock" class="block block-dcl-emergency-banner block-dcl-emergency-banner-block clearfix">
+	  <div id="emergency-banner-placeholder"></div>
+	</section>
+</div></div>
+<div class="container">
+    
+    <div id="s-lc-public-bc" class="row">
+        <div class="col-md-12">
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="http://www.library.dartmouth.edu/">Dartmouth Library</a></li>
+
+                    <li class="s-lc-desktop-only"><a href="https://libcal.dartmouth.edu">Library Events &amp; Room Bookings</a></li>
+
+                                            <li><a href="/reserve/studyrooms">Group Study</a></li>
+                    
+                                            <li class="active s-lc-desktop-only">Space Availability - Berry 171A</li>
+                    
+                                        </ol>
+            </nav>
+        </div>
+    </div>
+
+    <noscript>
+        <div class="alert alert-danger" id="noscript">Your browser has javascript disabled. Without javascript some functions will not work.</div>
+    </noscript>
+
+            
+            
+    <main>
+            <div id="s-lc-public-main" class="s-lc-public-main">
+        <div id="s-lc-public-page-content" class="row">
+            <div id="s-lc-eq-title-div" class="col-md-12 center s-lc-spaces-setup-info">
+                <div class="form-group pull-right s-lc-eq-s-confirmedBtn">
+        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+        <a href="/space/19054/confirmed" class="s-lc-eq-s-conf-link">
+            View Confirmed Bookings
+        </a>
+    </div>
+
+    <div id="s-lc-group-description">
+        <h1 id="s-lc-public-header-title">
+            Berry 171A
+
+            <small>
+                (Baker-Berry)
+            </small>
+
+                            <small>
+                    Capacity: 6
+                </small>
+                    </h1>
+
+                    <div id="s-lc-item-title-area">
+                    <div class="row">
+                    <div class="col-md-4">
+                <img src="https://libapps.s3.amazonaws.com/customers/1051/images/berry-171-a-16-9.jpg" class="img-thumbnail" alt="Berry 171A" />
+            </div>
+            <div class="col-md-8">
+        
+            <div class="s-lc-section-description" role="region" aria-label="description">
+                <h2 class="sr-only">
+                    Description
+                </h2>
+
+                                    <p>
+                        <p>Berry 171A is located on Berry Level 1, behind the Information &amp; Reference Desk. It has capacity for 6 people and contains a flat screen monitor and a white board.</p>
+
+                    </p>
+                
+                <p>
+                    <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
+                    Accessible Friendly:
+                    No
+
+                    <br>
+
+                    <i class="fa fa-plug" aria-hidden="true"></i>
+                    Power Available:
+                    No
+                </p>
+            </div>
+
+            
+        </div>
+    </div>
+            </div>
+            </div>
+</div>
+
+            
+            <div id="col1" class="col-md-12 center" >
+                                    <div id="s-lc-window-limit-warning" class="alert alert-info margin-top-med margin-bottom-none" role="alert" style="display: none;">
+    You have reached the end of the bookable window. No availability will be shown past this point.
+</div>
+
+                    <div id="time_grid_cont" class="s-lc-spaces-time-grid s-lc-spaces-setup-info" role="grid">
+                        <div id="eq-time-grid">
+                        </div>
+
+                        <div id="s-lc-time-grid-pagination" class="s-lc-time-grid-pagination">
+                        </div>
+
+                        <div class="s-lc-time-grid-legend" id="eq-time-grid-legend">
+                            <span class="label-eq-cont" data-toggle="tooltip" data-placement="top" title="Slot is available, click to book!"><span class="label label-eq-avail">&nbsp;&nbsp;</span> Available</span>
+<span class="label-eq-cont" data-toggle="tooltip" data-placement="top" title="Your pending booking."><span class="label label-eq-pending">&nbsp;&nbsp;</span> Your Booking</span>
+<span class="label-eq-cont" data-toggle="tooltip" data-placement="top" title="This slot is unavailable for starting a new booking. Bookings may occasionally extend into this slot."><span class="label label-eq-unavailable">&nbsp;&nbsp;</span> Unavailable/Padding</span>                        </div>
+                    </div>
+                
+                <div id="s-lc-eq-form-box" class="s-lc-spaces-setup-info" style="display: none;" role="region" aria-label="booking form" aria-live="polite">
+    <form id="s-lc-eq-form-times" class="form-horizontal" method="post">
+        <fieldset>
+            <div id="s-lc-eq-bwell" class="well" tabindex="0">&nbsp;</div>
+
+            <div id="s-lc-eq-bform-inner" class="col-sm-offset-5">
+                <button class="btn btn-primary" name="submit_times" id="submit_times">
+                    Submit Times
+                </button>&nbsp;
+
+                            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div id="s-lc-eq-form" style="clear:both; display: none;" role="region" aria-live="polite" aria-label="Booking details"></div>
+
+<div id="s-lc-eq-errors" class="alert alert-danger" style="display: none;" role="region" aria-live="polite" aria-label="Error encountered"></div>
+
+<div id="s-lc-eq-success" style="display: none;" role="region" aria-live="polite" aria-labelledby="s-lc-eq-success-title">
+    <h1 id="s-lc-eq-success-title">
+        <i class="fa fa-check-square-o fa-lg s-lc-green" aria-hidden="true"></i>
+        Thank you!
+    </h1>
+
+    <div id="s-lc-eq-success-content"></div>
+</div>
+            </div>
+
+                    </div>
+    </div>
+    </main>
+
+    <footer id="s-lc-public-footer" class="s-lc-public-footer row">
+        <div id="s-lc-public-footer-brand">
+            <span title="libcal-us-2">Powered by</span> <a href="https://www.springshare.com">Springshare</a>.
+        </div>
+        <div id="s-lc-public-footer-rights">
+            All rights reserved.
+        </div>
+
+                    <div id="s-lc-footer-support-link">
+                <a href="mailto:dltg@cloud.dartmouth.edu">Report a tech support issue.</a>
+            </div>
+        
+                <div id="s-lc-public-footer-print-link">
+        View this page in a format suitable for
+        <a href="/r/accessible?lid=2988&gid=5070">
+            screen-readers and keyboard-only users
+        </a>
+    </div>
+
+        <div id="s-lc-public-footer-admin-links" role="navigation" aria-label="Admin Footer">
+                            <a id="s-lc-sign-in" href="https://dartmouth.libapps.com/libapps/login.php?site_id=4259&amp;target=">Login to LibApps</a>
+                    </div>
+
+        <div class="s-lc-public-footer-actions">
+    
+<div id="s-lc-language">
+    <select id="s-lc-language-selector" aria-label="Select Language">
+                <option value="cy" >Cymraeg</option>
+                <option value="en" selected>English</option>
+                <option value="es" >español</option>
+                <option value="fr" >français</option>
+                <option value="ga" >Irish</option>
+                <option value="ja" >日本語 Nihongo</option>
+                <option value="sl" >slovenski jezik</option>
+                <option value="vi" >Tiếng Việt</option>
+                <option value="zh" >中文 Zhōngwén</option>
+            </select>
+</div>
+</div>
+    </footer>
+
+    <script type="text/javascript">  var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-4680188-2']);  _gaq.push(['_setDomainName', 'dartmouth.edu']);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script>
+
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.dartmouth.edu"]);
+  _paq.push(["setDomains", ["*.library.dartmouth.edu","*.collections.dartmouth.edu","*.journals.dartmouth.edu","*.libanswers.dartmouth.edu","*.libarchive.dartmouth.edu","*.libcal.dartmouth.edu","*.linguistic-discovery.dartmouth.edu","*.regio.dartmouth.edu","*.researchguides.dartmouth.edu","*.www.dartmouth.edu/~library","*.www.library.dartmouth.edu","*.archives-manuscripts.dartmouth.edu"]]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.library.dartmouth.edu/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+</div>
+
+<div id="s-lc-public-cust-footer"><footer role="contentinfo">
+	<div class="container">
+		<div class="row">
+			<div class="region region-footer-first">
+				<nav role="navigation" aria-labelledby="block-footerlibrarylinks-menu" id="block-footerlibrarylinks" class="footer-library-list-links">
+					<h2 id="block-footerlibrarylinks-menu">
+						Dartmouth Library 
+					</h2>
+					<ul class="menu nav">
+						<li class="expanded dropdown"> <a href="https://library.dartmouth.edu/library/bakerberry/">Baker-Berry Library <span class="caret"></span></a> 
+						<ul class="menu dropdown-menu">
+							<li> <a href="https://www.library.dartmouth.edu/book-arts">Book Arts Workshop</a></li>
+							<li> <a href="https://www.dartmouth.edu/library/maproom/">Evans Map Room</a> </li>
+							<li> <a href="https://www.dartmouth.edu/library/mediactr/">Jones Media Center</a> </li>
+						</ul>
+						</li>
+						<li> <a href="https://www.dartmouth.edu/library/biomed/">Biomedical Libraries</a> </li>
+						<li> <a href="https://www.library.dartmouth.edu/feldberg">Feldberg Business & Engineering Library </a> </li>
+						<li> <a href="https://www.dartmouth.edu/library/rauner/">Rauner Special Collections Library</a> </li>
+						<li> <a href="https://www.library.dartmouth.edu/records-management">Records Management</a></li>
+						<li> <a href="https://www.dartmouth.edu/library/sherman/">Sherman Art Library</a> </li>
+					</ul>
+				</nav>
+			</div>
+			<div class="region region-footer-second">
+				<nav role="navigation" aria-labelledby="block-footeraboutus-menu" id="block-footeraboutus">
+					<h2 id="block-footeraboutus-menu">
+						<span data-toggle="collapse" href="#footer-aboutus-collapse" tabindex="0">About Us<span class="fa fa-caret-down"></span></span> 
+					</h2>
+					<div id="footer-aboutus-collapse" class="collapse" aria-expanded="false">
+						<ul class="menu nav">
+							<li> <a href="https://www.library.dartmouth.edu/about/strategic-objectives-priorities">Strategic Objectives</a> </li>
+							<li> <a href="https://www.library.dartmouth.edu/about/staff-and-departments">Staff & Departments</a> </li>
+							<li> <a href="https://researchguides.dartmouth.edu/subjectlibrarians">Subject Librarians</a> </li>
+							<li> <a href="https://www.library.dartmouth.edu/services/faculty">Faculty Services</a> </li>
+							<li> <a href="https://www.library.dartmouth.edu/borrow-renew/alumni">Alumni Services</a> </li>
+							<li> <a href="https://www.library.dartmouth.edu/about/visit-history">Visiting & History</a> </li>
+							<li> <a href="https://www.library.dartmouth.edu/libraries-and-spaces/accessibility">Accessibility</a> </li>
+							<li> <a href="https://search.library.dartmouth.edu/discovery/search?vid=01DCL_INST:01DCL&lang=en">Library Catalog</a> </li>
+							<li> <a href="https://www.library.dartmouth.edu/about/careers-jobs">Careers</a> </li>
+							<li> <a href="https://www.library.dartmouth.edu/about/friends-library">Friends of the Library</a></li>
+							<li class="last"> <a href="https://www.library.dartmouth.edu/about">More About Us</a> </li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="region region-footer-third">
+				<section id="block-footercontactus" class="block block-block-content block-block-contentd216f7f4-bcca-429f-a900-db0ec9828214 clearfix">
+					<h2 class="block-title">
+						<span data-toggle="collapse" href="#footer-contactus-collapse" tabindex="0">Contact Us<span class="fa fa-caret-down"></span></span>
+					</h2>
+					<div id="footer-contactus-collapse" class="collapse" aria-expanded="false">
+						<div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+							<ul class="library-info">
+								<li>25 North Main Street<br />
+								Hanover, NH, USA 03755</li>
+								<li>Phone: <a href="tel:+1-603-646-2567">603-646-2567</a></li>
+								<li><a href="https://www.library.dartmouth.edu/help/contact-us">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+						<p><a href="https://www.library.dartmouth.edu/feedback">Give Us Feedback</a></p>
+					</div>
+				</section>
+			</div>
+			<div class="region region-footer-fourth">
+				<section id="block-footerconnectwithus" class="block block-block-content block-block-contentc36f95a7-e463-4baf-ab99-52cb3bdb2102 clearfix">
+					<h2 class="block-title">
+						Connect with Us
+					</h2>
+					<div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+						<ul class="group footer-social" role="menu">
+							<li role="menuitem"><a class="logo-facebook hide-txt" href="https://www.facebook.com/dartmouth.college.library">Facebook</a></li>
+							<li role="menuitem"><a class="logo-instagram hide-txt" href="https://www.instagram.com/dartmouthlibrary/">Instagram</a></li>
+							<li role="menuitem"><a class="logo-youtube hide-txt" href="https://www.youtube.com/playlist?list=PLA161361549CB448C">YouTube</a></li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="row">
+			<div class="region region-footer-copyright">
+				<nav role="navigation" aria-labelledby="block-bootstrap-dcl-footercopyright-menu" id="block-bootstrap-dcl-footercopyright">
+					<h2 class="visually-hidden" id="block-bootstrap-dcl-footercopyright-menu">
+						Footer copyright 
+					</h2>
+					<ul class="menu menu--footer-copyright nav">
+                        <li>
+        					<a href="https://home.dartmouth.edu/" title="Dartmouth College home">Dartmouth</a>
+                  		</li>
+                        <li>
+        					<a href="https://www.dartmouth.edu/copyright/">Copyright © 2022 Trustees of Dartmouth College</a>
+                  		</li>
+                        <li>
+        					<a href="https://www.library.dartmouth.edu/about/privacy-policy">Privacy</a>
+                  		</li>
+        			</ul>
+				</nav>
+				<!--#if expr="${no_chat} = /^yes$/" -->
+                    <!--#else -->
+				<section id="block-libchatwidget" class="block block-block-content block-block-contenta4e26191-1413-44e8-8319-abffcb732733 clearfix">
+					<div class="field field--name-body field--type-text-with-summary field--label-hidden field--item">
+						<div id="libchat_017e78861cd4be568f60ba98719c3d68">
+						</div>
+						<script type="text/javascript" src="https://libanswers.dartmouth.edu//load_chat.php?hash=017e78861cd4be568f60ba98719c3d68">
+						</script>
+					</div>
+				</section>
+                    <!--#endif -->
+				<section id="block-emergencybannerscriptblock" class="block block-dcl-emergency-banner block-dcl-emergency-banner-script-block clearfix">
+					<div id="emergency-banner-content-div" class="form-group">
+						<script src="https://library.dartmouth.edu/emergency/banner.php">
+						</script>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="//www.dartmouth.edu/library/_permacode/common/library/scripts/drupal-scripts/ready.min.js">
+</script>
+
+<!--[if lte IE 9]>
+<script src="//www.dartmouth.edu/library/_permacode/common/library/scripts/drupal-scripts/classList.min.js">
+</script>
+<![endif]-->
+
+<script src="//www.dartmouth.edu/library/_permacode/common/library/scripts/drupal-scripts/jquery.once.min.js">
+</script>
+
+<script src="https://www.dartmouth.edu/library/_permacode/common/library/scripts/drupal-scripts/jasny-bootstrap.min.js">
+</script>
+
+<script src="https://www.dartmouth.edu/library/_permacode/common/library/scripts/drupal-scripts/fontfaceobserver.js">
+</script>
+
+<script src="https://www.dartmouth.edu/library/_permacode/common/library/scripts/drupal-scripts/ou-drupal-scripts.js">
+</script>
+
+<!-- main script -->
+<script type="text/javascript" src="https://www.dartmouth.edu/library/_permacode/common/library/scripts/dartmouthLibrary.js">
+</script>
+<!-- fancybox -->
+<script type="text/javascript" src="https://www.dartmouth.edu/library/_permacode/common/library/scripts/fancybox-3.1.20/jquery.fancybox.min.js">
+</script>
+
+<!-- accessibility -->
+<script src="https://www.dartmouth.edu/library/_permacode/common/library/scripts/bootstrap-accessibility/bootstrap-accessibility.js">
+</script>
+
+<!-- scrollTo -->
+<script src="https://www.dartmouth.edu/library/_permacode/common/library/scripts/jquery.scrollTo-2.1.2/jquery.scrollTo.min.js">
+</script></div>
+                <script defer src="https://static-assets-us.libcal.com/js196/fullcalendar.min.js"></script>
+        <script defer src="https://static-assets-us.libcal.com/js196/datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://static-assets-us.libcal.com/css196/datepicker.min.css"/>
+
+    <script>
+    var springyFullCalendar = {
+        commonOptions: {
+            schedulerLicenseKey: '0391239527-fcs-1659132663',
+            now: '2022\u002D12\u002D31\u002020\u003A18',
+            nowIndicator: true,
+            scrollTime: '19\u003A00\u003A00',
+            lazyFetching: false,
+            locale: springSpace.language,
+            themeSystem: 'bootstrap',
+            eventTextColor: '#222',
+            eventDisplay: 'block',
+            moreLinkClick: 'day',
+            bootstrapFontAwesome: {
+                goToDate: 'fa-calendar',
+                goToNextAvailable: 'fa-fast-forward',
+                refresh: 'fa-refresh',
+            },
+            navLinks: true, // https://fullcalendar.io/docs/navLinks
+            resourceOrder: false, // https://fullcalendar.io/docs/resourceOrder
+            stickyHeaderDates: false, // https://fullcalendar.io/docs/stickyHeaderDates && https://github.com/springshare/LibCal/issues/11801
+        },
+        timelineOptions: {
+            height: 'auto',
+            refetchResourcesOnNavigate: false,
+            eventOverlap: false,
+            displayEventTime: false,
+            slotDuration: '00\u003A30',
+            titleFormat: springSpace.dateFormat,
+            views: {
+                timelineSingleDay: {
+                    type: 'resourceTimeline',
+                    buttonText: 'Day\u0020View',
+                    duration: {days: 1},
+                    slotLabelFormat: springSpace.timeFormat,
+                },
+                timelineHourlyShort: {
+                    type: 'resourceTimeline',
+                    duration: {days: 3},
+                    slotLabelFormat: [springSpace.dateFormat, springSpace.timeFormat],
+                },
+                timelineHourlyLong: {
+                    type: 'resourceTimeline',
+                    duration: {days: 7},
+                    slotLabelFormat: [springSpace.dateFormat, springSpace.timeFormat],
+                },
+                timelineDailyLong: {
+                    type: 'resourceTimeline',
+                    slotDuration: '24:00',
+                    duration: {days: 28},
+                    slotLabelFormat: ['dd D'],
+                    nowIndicator: false
+                },
+                resourceTimeGridWeek: {
+                    buttonText: 'Week\u0020View',
+                    slotLabelFormat: springSpace.timeFormat,
+                }
+            },
+        },
+        publicTexts: {
+            allDay: 'All\u0020Day',
+            available: 'Available',
+            dayGridMonth: 'Month',
+            dayGridWeek: 'Agenda',
+            goToDate: 'Go\u0020To\u0020Date',
+            goToNextAvailable: 'Next\u0020Available',
+            next: 'Next',
+            prev: 'Previous',
+            timeGridDay: 'Day',
+            timeGridWeek: 'Week',
+            today: 'Today',
+            unavailable: 'Unavailable\/Padding',
+            yourBooking: 'Your\u0020Booking',
+            listWeek: 'Week\u0020List',
+        },
+        adminTexts: {
+            goToDate: 'Go\u0020To\u0020Date',
+            refresh: 'Refresh',
+            prev: 'Previous',
+            next: 'Next',
+            today: 'Today',
+            week: 'Week',
+            month: 'Month',
+            day: 'Day',
+            dayGridWeek: 'Agenda',
+            allDay: 'All\u0020Day',
+            atLocation: '\u0025title\u0025\u0020at\u0020\u0025location\u0025',
+        },
+        dateTimeFormats: {
+            monthViewTitle: 'MMMM YYYY',
+        },
+    };
+
+    // placeholder for dynamic content boxes with a full calendar
+    var calendarList = {};
+
+    function reRenderCalendarList() {
+        for (var calId in calendarList) {
+            calendarList[calId].render();
+        }
+    }
+</script>
+<script defer src="https://static-assets-us.libcal.com/js196/direct/full-calendar-common.min.js"></script>
+
+    <script defer src="https://static-assets-us.libcal.com/js196/direct/public/equipment/common.min.js"></script>
+    <script defer src="https://static-assets-us.libcal.com/js196/direct/public/equipment/spaces.min.js"></script>
+    <script>
+        var pendingRoomBookings = [];
+        var pendingBookingNextId = 1;
+        var pendingBookingsBlowAwayCart = false;
+
+        function addError(msg, id) {
+            jQuery(".s-lc-eq-" + id).addClass("has-error").find(".form-control").attr("aria-invalid", true);
+            jQuery(".s-lc-eq-" + id).find(".s-lc-eq-flab").append('<div class="error-message">' + msg + "</div>");
+            jQuery("#" + id).focus();
+            return false;
+        }
+
+        function removeErrors() {
+            jQuery(".s-lc-eq-q").removeClass("has-error").find(".error-message").remove();
+        }
+
+        function agreeToTermsAndConditions() {
+            jQuery("#bform-terms-container").hide();
+
+            // sometimes we need to check the patron's email before showing the booking form
+            var emailRestrictionCheck = jQuery("#s-lc-booking-restriction-check");
+            if (emailRestrictionCheck.length > 0) {
+                emailRestrictionCheck.show();
+                return false;
+            }
+
+            // other times we jump directly to the booking form
+            jQuery("#bform-form-container").show();
+
+            scrollAndFocusOnElement('#s-lc-bform-help');
+
+            springySpaces.updateSession();
+
+            return false;
+        }
+
+                var locationIsUsingLibAuth = true;
+
+        function customFormValidation() {
+            // exists to be overwritten by the specific group validation function
+        }
+
+        function preFormValidationAndPayload() {
+            removeErrors();
+            jQuery("#s-lc-eq-errors").hide();
+
+            if (!isVisibleFieldsValid()) {
+                return false;
+            }
+
+            if (!customFormValidation()) {
+                return false;
+            }
+
+            springySpaces.stopSessionTimer();
+            pageBusyBegin("#btn-form-submit");
+
+            var formElement = '#s-lc-eq-bform';
+            var bookings = preparePendingBookingsPayload();
+            var bookingsPayload = JSON.stringify(bookings);
+
+            springyCommon.appendHiddenInput('session', springySpaces.sessionId, formElement);
+            springyCommon.appendHiddenInput('bookings', bookingsPayload, formElement);
+            springyCommon.appendHiddenInput('returnUrl', springySpaces.getReturnUrl(), formElement);
+            springyCommon.appendHiddenInput('pickupHolds', jQuery('#s-lc-pickup-holds').val(), formElement);
+            springyCommon.appendHiddenInput('method', springyPage.bookingMethod, formElement);
+
+            return true;
+        }
+
+        function bookingSuccessCallback(data) {
+            pageBusyEnd("#btn-form-submit");
+            if (data.error) {
+                jQuery("#s-lc-eq-errors").html(data.error).show();
+                return;
+            }
+
+            jQuery('#s-lc-eq-form, .s-lc-spaces-setup-info').hide();
+            jQuery("#s-lc-eq-success-content").html(data.html)
+            jQuery("#s-lc-eq-success").show().focus();
+
+            return;
+        }
+
+        function bookingErrorCallback(xhr) {
+            pageBusyEnd("#btn-form-submit");
+            ajaxErrorHandler(xhr);
+        }
+
+        function submitPendingTimes() {
+            var payload = {
+                session: springySpaces.sessionId,
+                patron: springySpaces.patron,
+                patronHash: springySpaces.patronHash,
+                bookings: preparePendingBookingsPayload(),
+            };
+
+            springySpaces.stopSessionTimer();
+            pageBusyBegin("#submit_times");
+
+            jQuery.ajax({
+                type: 'post',
+                url: "/ajax/space/times",
+                data: payload,
+                dataType: "html",
+            })
+            .always(function (data) {
+                pageBusyEnd("#submit_times");
+            })
+            .done(function(data) {
+                // hide a bunch of stuff
+                jQuery('.s-lc-spaces-setup-info').hide();
+
+                // setup booking form + terms html
+                jQuery("#s-lc-eq-form").html(data).show();
+
+                // scroll to the top of the page
+                window.scrollTo(0, 0);
+
+                springySpaces.startSessionTimer();
+            })
+            .fail(ajaxErrorHandler);
+
+            return false;
+        }
+
+        function submitPendingRoomBookings_LibAuth() {
+            var payload = {
+                libAuth: true,
+                blowAwayCart: true,
+                returnUrl: springySpaces.getReturnUrl(),
+                session: springySpaces.sessionId,
+                bookings: preparePendingBookingsPayload(),
+                method: springyPage.bookingMethod,
+            };
+
+            springySpaces.stopSessionTimer();
+            workingAlert();
+
+            jQuery.ajax({
+                type: 'post',
+                url: "/ajax/space/createcart",
+                data: payload,
+                dataType: 'json',
+            })
+            .always(function (data) {
+                stopAlert();
+            })
+            .done(function(data) {
+                if (data.success) {
+                    // redirect to libauth checkout page
+                    window.location = data.redirect;
+                } else {
+                    jQuery("#s-lc-eq-errors").html(data.error).show();
+                }
+            })
+            .fail(ajaxErrorHandler);
+
+            return false;
+        }
+
+        function makeCartAndGoToEquipPage() {
+            // we only allow user to do this if all the room bookings start at the same time
+            if (pendingRoomBookings.length > 1) {
+                var startTime = pendingRoomBookings[0].start;
+                for (var i = 1; i < pendingRoomBookings.length; i++) {
+                    var bookingInfo = pendingRoomBookings[i];
+                    if (!bookingInfo.start.isSame(startTime)) {
+                        errorAlert('You can only create an Equipment Cart if all your room bookings begin at the same time.');
+                        return false;
+                    }
+                }
+            }
+
+            var payload = {
+                blowAwayCart: pendingBookingsBlowAwayCart,
+                returnUrl: springySpaces.getReturnUrl(),
+                session: springySpaces.sessionId,
+                bookings: preparePendingBookingsPayload(),
+                method: springyPage.bookingMethod,
+            };
+
+            springySpaces.stopSessionTimer();
+            workingAlert();
+
+            jQuery.ajax({
+                type: 'post',
+                url: "/ajax/space/createcart",
+                data: payload,
+                dataType: 'json',
+            })
+            .always(function (data) {
+                stopAlert();
+            })
+            .done(function(data) {
+                if (data.success) {
+                    // redirect to new page
+                    window.location = data.redirect;
+                } else if (data.hasItems) {
+                    errorAlert("Cart already has items in it. If you click the shopping cart again, the existing items in the cart will be replaced by the selected rooms.");
+                    pendingBookingsBlowAwayCart = true;
+                } else {
+                    errorAlert(data.error);
+                }
+            })
+            .fail(ajaxErrorHandler);
+
+            return false;
+        }
+
+        function changeBookingTimes() {
+            // show the old form box + availability grid
+            jQuery('.s-lc-spaces-setup-info').show();
+
+            // hide the terms + booking form
+            jQuery('#s-lc-eq-form, #s-lc-eq-errors').hide();
+
+            return false;
+        }
+
+        function getSpaceResourceContent(info) {
+            var html = '';
+            var resourceData = info.resource.extendedProps;
+            var resourceId = springyPage.isSeatBooking ? resourceData.seatId : resourceData.eid;
+            var title  = escapeHtml(info.fieldValue);
+
+            if (resourceData.hasInfo) {
+                html += '<a href="#" class="s-lc-item-more-info" data-eid="' + resourceId + '"' +
+                    ' aria-label="Click\u0020for\u0020more\u0020info\u0020about ' + title + '">' +
+                    '<span class="s-lc-info-label">Info</span>' +
+                    '</a>';
+            }
+
+            var additionalClasses = '';
+            var additionalIcons = '';
+
+            if (resourceData.isAccessible) {
+                additionalClasses += ' s-lc-accessible';
+                additionalIcons += ' <i class="fa fa-wheelchair-alt fa-lg" aria-hidden="true"></i>';
+            }
+
+            if (resourceData.isPowered) {
+                additionalClasses += ' s-lc-powered';
+                additionalIcons += ' <i class="fa fa-plug fa-lg" aria-hidden="true"></i>';
+            }
+
+            var resourceLabel = '<span class="fc-cell-text' + additionalClasses + '">' + title + additionalIcons + '</span>';
+
+            if (resourceData.url !== undefined) {
+                html += '<a href="' + resourceData.url + '">' + resourceLabel + '</a>';
+            } else {
+                html += resourceLabel;
+            }
+
+            return {
+                html: html,
+            };
+        }
+
+        jQuery(function () {
+            jQuery('#lid').on('change', goToPageForLocation);
+            jQuery('#gid').on('change', goToPageForGroup);
+
+            jQuery('#s-lc-session-warning-continue').on('click', springySpaces.updateSession);
+            jQuery('#s-lc-session-expired-reload').on('click', function() {
+                window.location.reload();
+
+                return false;
+            });
+
+            jQuery('#eq_cart').on('click', makeCartAndGoToEquipPage);
+
+            jQuery('#s-lc-eq-form-times').on('submit', function() {
+                if (locationIsUsingLibAuth) {
+                    return submitPendingRoomBookings_LibAuth();
+                }
+
+                return submitPendingTimes();
+            });
+        });
+    </script>
+
+
+            <script src="https://static-assets-us.libcal.com/js196/direct/pagination.min.js"></script>
+        <script defer src="https://static-assets-us.libcal.com/js196/direct/public/equipment/spaces-individual.min.js"></script>
+    
+        <script>
+        var springyPage = {
+            wantAlternatingBackground: false,
+            timelineOptions: {
+                resourceAreaWidth: '33%',
+                initialDate: '2022\u002D12\u002D31',
+            },
+            itemId: 19054,
+            isSeatBooking: 0,
+            seatId: 0,
+            zoneId: 0,
+            isAccessible: false,
+            isPowered: false,
+            isDailyBookings: 0,
+            locationId: 2988,
+            groupId: 5070,
+            language: {
+                resourceColumnLabel: 'Space',
+                infoLabel: 'Info',
+                clickMoreInfoLabel: 'Click\u0020for\u0020more\u0020info\u0020about',
+            },
+            viewMode: 'timelineSingleDay',
+            returnUrl: '',
+            pageIndex: 0,
+            pageSize: 18,
+            resourceCount: 1,
+            bookingMethod: 12,
+            autoCreateBookingDate: null,
+        };
+
+        var resources = [
+                        {
+                id: "eid_19054",
+                title: "Berry\u0020171A (Capacity 6)",
+                eid: 19054,
+                gid: 5070,
+                lid: 2988,
+                grouping: "Group\u0020Study",
+                gtype: 2,
+                capacity: 6,
+                hasInfo: false,
+                thumbnail: "https\u003A\/\/libapps.s3.amazonaws.com\/customers\/1051\/images\/berry\u002D171\u002Da\u002D16\u002D9.jpg",
+                isAccessible: 0,
+                isPowered: 0,
+            },
+                    ];
+
+        var resourceNameIdMap = {
+                        "eid_19054": "Berry\u0020171A",
+                    };
+
+        
+        var paginatedResources = springyPagination.createPaginatedResources(resources, springyPage.pageSize);
+    </script>
+    
+    <script>
+    var pendingBookingsLimitIssues = null;
+    var dateFormatStartTimeDict = "MMDDHHmm";
+    var dateFormatDayOfYear = "YYYY-MM-DD";
+    var issueTypeAdditionalText = {
+        "duration": " minutes",
+        "frequency": " bookings",
+    };
+    var frequencyDisplayStrings = {
+        "d": " per\u0020day",
+        "w": " per\u0020week",
+        "m": " per\u0020month",
+        "y": " per\u0020year",
+        "t": " at\u0020a\u0020time",
+    };
+
+    function pendingRoomBookingsAreNowEmpty() {
+        jQuery("#s-lc-eq-form-box").hide();
+    }
+
+    function renderPendingRoomBookings() {
+        // ensure all tooltips are hidden
+        jQuery(".tooltip").hide();
+
+        if (pendingRoomBookings.length == 0) {
+            pendingRoomBookingsAreNowEmpty();
+            return;
+        }
+
+        // refresh the shown cart items
+        // format the room data as html
+        var html = '<div>';
+
+        var startDateTimeFormat = springyPage.isDailyBookings ? springSpace.dateFormat : springSpace.getDateTimeFormat();
+        var endDateTimeFormat = springyPage.isDailyBookings ? springSpace.dateFormat : springSpace.getShortDateTimeFormat();
+        var totalCost = 0;
+
+        for (var i = 0; i < pendingRoomBookings.length; i++) {
+            var bookingInfo = pendingRoomBookings[i];
+            var bookingCost = bookingInfo.cost;
+            var resourceId = bookingInfo.seat_id > 0 ? bookingInfo.seat_id : bookingInfo.eid;
+            var resourceName = resourceNameIdMap['eid_' + resourceId];
+
+            html += '<div class="form-group s-lc-pending-booking" id="pending_booking_' + bookingInfo.id + '">';
+            html += '   <label class="col-md-5 control-label" for="bookingend_' + bookingInfo.id + '"><strong>' + resourceName + '</strong>: ' + bookingInfo.start.format(startDateTimeFormat) + ' ' + springLang.eq_js_until_det + '</label>';
+            html += '   <div class="col-md-3">';
+            html += '     <div class="input-group">';
+            html += '           <select id="bookingend_' + bookingInfo.id + '" name="bookingend_' + bookingInfo.id + '" data-booking="' + bookingInfo.id + '" class="form-control input-sm b-end-date">';
+
+            for (var selectionIndex = 0; selectionIndex < bookingInfo.options.length; selectionIndex++) {
+                var selected = bookingInfo.optionSelected == selectionIndex ? 'selected="selected"' : '';
+                var value = bookingInfo.options[selectionIndex];
+                var name = moment(value).format(endDateTimeFormat);
+                var checksum = bookingInfo.optionChecksums[selectionIndex];
+                html += '<option value="' + value + '" ' + selected + ' data-crc="' + checksum + '">' + name + '</option>';
+            }
+
+            html += '           </select>';
+            html += '           <div class="input-group-btn">';
+            html += '               <button type="button" class="btn btn-default btn-sm" onclick="return removePendingBooking(' + bookingInfo.id + ',' + bookingInfo.lid + ');"><i class="fa fa-trash-o" aria-hidden="true"></i><span class="sr-only">' + springLang.eq_js_rem_pending + '</span></button>';
+            html += '           </div>';
+            html += '       </div>';
+            html += '     </div>';
+            if (bookingCost > 0) {
+                var costDisplay = springSpace.formatCurrency(bookingCost);
+                var costPreview = "\u007Bamount\u007D".replace("\u007Bamount\u007D", costDisplay).replace("\u007Brate\u007D", "");
+                html += '<label class="col-md-3 control-label s-lc-billing-cost-single">' + costPreview + '</label>';
+            }
+            html += '   </div>';
+            html += '   </div>';
+            html += '</div>';
+
+            totalCost += bookingCost;
+        }
+
+        var bookingDurationOkay = true;
+        if (pendingBookingsLimitIssues) {
+            bookingDurationOkay = false;
+            pendingBookingsLimitIssues.forEach(function(issueDetails) {
+                var limitDisplay = issueDetails.allowed + issueTypeAdditionalText[issueDetails.type] + frequencyDisplayStrings[issueDetails.frequency];
+                var usedDisplay = issueDetails.used + issueTypeAdditionalText[issueDetails.type];
+                var issueDisplay = 'Sorry,\u0020you\u0020can\u0020only\u0020reserve\u0020\u007BlimitAmount\u007D,\u0020and\u0020you\u0020currently\u0020have\u0020\u007BusedAmount\u007D.\u0020Please\u0020adjust\u0020your\u0020booking.'.replace('{limitAmount}', limitDisplay).replace('{usedAmount}', usedDisplay);
+                var issueHtml = '<strong>' + issueDetails.group + '</strong>: ' + issueDisplay;
+
+                html += '\
+                    <div class="form-group">\
+                        <div class="col-md-offset-1 col-md-10">\
+                            <div class="alert alert-warning">' + issueHtml + '</div>\
+                        </div>\
+                    </div>';
+            });
+        }
+
+        if (totalCost > 0) {
+            html += '\
+                <div class="form-group s-lc-pending-booking">\
+                    <label class="col-md-5 control-label">Total\u0020cost\u0020for\u0020this\u0020reservation\u003A</label>\
+                    <label class="col-md-5 control-label s-lc-billing-cost-total">' + springSpace.formatCurrency(totalCost) + '</label>\
+                </div>';
+        }
+
+        html += '</div>';
+
+        // show the booking form box which contains the booking well, the terms + conditions and the booking form
+        jQuery("#s-lc-eq-form-box").show();
+
+        // put the item in the displayed cart + set the window focus to the cart
+        var roomCart = jQuery("#s-lc-eq-bwell");
+        roomCart.empty();
+        roomCart.html(html);
+        roomCart.focus();
+
+        // disable the add equipment and form submission buttons until the times are okay
+        jQuery("#submit_times, #eq_cart").prop('disabled', !bookingDurationOkay);
+
+        // setup delete icon tooltips
+        accessibleIcons();
+
+        // make the tooltip for the cart icon
+        jQuery("#eq_cart").tooltip({
+            title: springLang.eq_js_cart_tt,
+            html: true,
+            container: "body"
+        });
+
+        jQuery('.b-end-date').on('change', function() {
+            var changedBooking = jQuery(this);
+
+            updatePendingBookingDuration(changedBooking);
+        });
+    }
+
+    function preparePendingBookingsPayload() {
+        var payload = [];
+
+        for (var i = 0; i < pendingRoomBookings.length; i++) {
+            var bookingInfo = pendingRoomBookings[i];
+            payload.push({
+                id: bookingInfo.id,
+                eid: bookingInfo.eid,
+                seat_id: bookingInfo.seat_id,
+                gid: bookingInfo.gid,
+                lid: bookingInfo.lid,
+                start: bookingInfo.start.format(springSpace.phpDateTimeFormat),
+                end: bookingInfo.end.format(springSpace.phpDateTimeFormat),
+                checksum: bookingInfo.checksum,
+            });
+        }
+        return payload;
+    }
+
+    function updatePendingBookingsFromData(bookings) {
+        pendingRoomBookings = [];
+
+        for (var i = 0; i < bookings.length; i++) {
+            var booking = bookings[i];
+
+            pendingRoomBookings.push({
+                id: booking.id,
+                eid: booking.eid,
+                seat_id: booking.seat_id,
+                gid: booking.gid,
+                lid: booking.lid,
+                cost: booking.cost,
+                checksum: booking.checksum,
+
+                name: booking.name,
+                start: moment(booking.start),
+                end: moment(booking.end),
+
+                options: booking.options,
+                optionSelected: booking.optionSelected,
+                optionChecksums: booking.optionChecksums,
+            });
+        }
+    }
+
+    function pendingRoomBookingsUpdateListAndAvailability(payload, fcInstance) {
+        // if we are adding rooms, we might need to hide the previous booking success message
+        jQuery("#s-lc-eq-success").hide();
+
+        springySpaces.stopSessionTimer();
+        workingAlert();
+
+        // find out booking information
+        jQuery.ajax({
+            type: "post",
+            url: "/spaces/availability/booking/add",
+            data: payload,
+            dataType: "json",
+        })
+        .always(stopAlert)
+        .done(function(data) {
+            if (data.error) {
+                if (data.isRefreshRequired) {
+                    fcInstance.refetchEvents();
+                }
+
+                return errorAlert(data.error);
+            }
+
+            // success! the entire pending bookings array can be re-created now
+            pendingBookingsLimitIssues = data.limitIssues;
+            springySpaces.setSessionId(data.session);
+            springySpaces.startSessionTimer();
+            updatePendingBookingsFromData(data.bookings);
+
+            // this request might have came back with updated grid data
+            // if it did not - refresh the whole grid
+            if (data.gridUpdateData) {
+                updateGridEventsForItem(data.gridUpdateData, fcInstance);
+            } else if (fcInstance) {
+                fcInstance.refetchEvents();
+            }
+
+            renderPendingRoomBookings();
+        })
+        .fail(ajaxErrorHandler);
+
+        return false;
+    }
+
+    function createStartTimeToClassMap(gridData) {
+        var startTimeToClassMap = {};
+
+        gridData.forEach(function(gridElement) {
+            var startMoment = moment(gridElement.start);
+            startTimeToClassMap[startMoment.format(dateFormatStartTimeDict)] = [gridElement.className];
+        });
+
+        return startTimeToClassMap;
+    }
+
+    function updateGridEventsForItem(gridUpdateData, fcInstance) {
+        var changedItemId = gridUpdateData.itemId;
+        var changedRangeStart = moment(gridUpdateData.dateStart, springSpace.phpDateTimeFormat);
+        var changedRangeEnd = moment(gridUpdateData.dateEnd, springSpace.phpDateTimeFormat);
+        var startTimeToClassMap = createStartTimeToClassMap(gridUpdateData.gridData);
+
+        fcInstance.batchRendering(function() {
+            fcInstance.getEvents().forEach(function (clientEvent) {
+                if (clientEvent.extendedProps.itemId !== changedItemId) {
+                    return;
+                }
+
+                var clientEventStart = moment(clientEvent.start);
+                // if this event is before the day of events that was changed - forget it
+                // and we only want to process events that start before the changed range "end"
+                if (clientEventStart.isBefore(changedRangeStart) || !clientEventStart.isBefore(changedRangeEnd)) {
+                    return;
+                }
+
+                var startKey = clientEventStart.format(dateFormatStartTimeDict);
+                if (startKey in startTimeToClassMap) {
+                    // this slot is unavailable
+                    clientEvent.setProp('classNames', startTimeToClassMap[startKey]);
+                    clientEvent.setExtendedProp('status', 1);
+                } else {
+                    // this slot is available
+                    clientEvent.setProp('classNames', ["s-lc-eq-avail"]);
+                    clientEvent.setExtendedProp('status', 0);
+                }
+            });
+        });
+    }
+
+    function timeGridClickedOnAvailableRoom(calEvent, fcInstance) {
+        var resource = calEvent.getResources()[0];
+        var resourceData = resource.extendedProps;
+        var timeslotData = calEvent.extendedProps;
+        var view = fcInstance.view;
+
+        var payload = {
+            add: {
+                eid: resourceData.eid,
+                seat_id: resourceData.seatId,
+                gid: resourceData.gid,
+                lid: resourceData.lid,
+                start: moment(calEvent.start).format(springSpace.phpDateTimeFormat),
+                checksum: timeslotData.checksum,
+            },
+                        lid: 2988,
+            gid: 5070,
+                        start: moment(view.activeStart).format(dateFormatDayOfYear),
+            end: moment(view.activeEnd).format(dateFormatDayOfYear),
+            session: springySpaces.sessionId,
+            bookings: preparePendingBookingsPayload(),
+        }
+
+        return pendingRoomBookingsUpdateListAndAvailability(payload, fcInstance);
+    }
+
+    function updatePendingBookingDuration(changedBooking) {
+        var fcInstance = getCurrentTimelineInstance(2988);
+        var view = fcInstance.view;
+        var selectedElement = changedBooking.find(':selected');
+
+        var payload = {
+            update: {
+                id: changedBooking.data('booking'),
+                checksum: selectedElement.data('crc'),
+                end: changedBooking.val()
+            },
+                        lid: 2988,
+            gid: 5070,
+                        start: moment(view.activeStart).format(dateFormatDayOfYear),
+            end: moment(view.activeEnd).format(dateFormatDayOfYear),
+            session: springySpaces.sessionId,
+            bookings: preparePendingBookingsPayload(),
+        }
+
+        return pendingRoomBookingsUpdateListAndAvailability(payload, fcInstance);
+    }
+
+    function removePendingBooking(pendingId, locationId) {
+        var timeline = getCurrentTimelineInstance(locationId);
+        var view = timeline.view;
+
+        var payload = {
+            removeId: pendingId,
+                        lid: 2988,
+            gid: 5070,
+                        start: moment(view.activeStart).format(dateFormatDayOfYear),
+            end: moment(view.activeEnd).format(dateFormatDayOfYear),
+            session: springySpaces.sessionId,
+            bookings: preparePendingBookingsPayload(),
+        }
+
+        return pendingRoomBookingsUpdateListAndAvailability(payload, timeline);
+    }
+
+    function formatEventsForFullCalendar(events) {
+        events.forEach(function(eventData) {
+            eventData.resourceId = "eid_" + eventData.itemId;
+
+            if (eventData.className) {
+                // this slot is unavailable
+                eventData.status = 1;
+                eventData.classNames = [eventData.className];
+            } else {
+                // this slot is available
+                eventData.classNames = ["s-lc-eq-avail"];
+                eventData.status = 0;
+            }
+        });
+
+        return events;
+    }
+
+    function timeGridRoomFetchEventsForTimePeriod(start, end, callback, lid, gid, eid) {
+        var data = {
+            lid: lid,
+            gid: gid,
+            eid: eid,
+            seat: springyPage.isSeatBooking,
+            seatId: springyPage.seatId,
+            zone: springyPage.zoneId,
+            accessible: springyPage.isAccessible,
+            powered: springyPage.isPowered,
+            start: moment(start).format(dateFormatDayOfYear),
+            end: moment(end).format(dateFormatDayOfYear),
+            bookings: preparePendingBookingsPayload(),
+            pageIndex: springyPage.pageIndex,
+            pageSize: springyPage.pageSize,
+        };
+
+        var url = '/spaces/availability/grid';
+
+                        if (typeof springyPage.autoCreateBookingDate === 'string') {
+            url = '/spaces/availability/grid/pre-create'
+            data.autoCreateBookingDate = springyPage.autoCreateBookingDate;
+            springyPage.autoCreateBookingDate = null;
+        }
+
+        springyCommon.closeAllPopups();
+
+        jQuery.ajax({
+            type: 'post',
+            url: url,
+            data: data,
+            dataType: 'json',
+        })
+        .done(function(data) {
+            callback(formatEventsForFullCalendar(data.slots));
+
+            // if we've just started a session as part of this grid view request
+            // then we need to update our local state with its details
+            if (data.session > 0) {
+                springySpaces.setSessionId(data.session);
+                springySpaces.startSessionTimer();
+                updatePendingBookingsFromData(data.bookings);
+                renderPendingRoomBookings();
+            }
+
+            var isAtEndOfWindowLimit = data.windowEnd === true;
+            jQuery('#s-lc-window-limit-warning').toggle(isAtEndOfWindowLimit);
+            jQuery('.fc-next-button').prop('disabled', isAtEndOfWindowLimit);
+
+                        var selectorPrefix = '';
+            var isNextAvailableButtonWanted = (document.querySelector(selectorPrefix + '.s-lc-eq-avail') === null);
+            jQuery(selectorPrefix + '.fc-goToNextAvailable-button').toggle(isNextAvailableButtonWanted);
+        })
+        .fail(function(xhr) {
+            // let fullcalendar know that the request has completed with no results
+            callback([]);
+
+            // and display the error to the user
+            ajaxErrorHandler(xhr);
+        });
+    }
+</script>
+
+
+</body>
+</html>
+
